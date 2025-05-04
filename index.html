@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beispielseite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 40px;
+            max-width: 80%;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 30%;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: white;
+            border-radius: 10px;
+        }
+        .contact-form {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 30px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 10px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form textarea {
+            height: 120px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Platzhalter</h2>
+        <div class="content">
+            <div class="box">
+                <a href="./seiten/seite1.html"><img src="./Bilder/bild2.jpg" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite1.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite2.html"><img src="./Bilder/bild1.jpg" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite2.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite3.html"><img src="./Bilder/bild3.jpg" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite3.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite4.html"><img src="./Bilder/bild4.jpg" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite4.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite5.html"><img src="./Bilder/bild5.jpg" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite5.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite6.html"><img src="./Bilder/Kacke1.gif" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite6.html" class="button">Mehr erfahren</a>
+            </div>
+            <div class="box">
+                <a href="./seiten/seite7.html"><img src="./Bilder/Kacke1.gif" alt="Platzhalterbild"></a>
+                <h3>Platzhalter</h3>
+                <p>Platzhalter</p>
+                <a href="./seiten/seite7.html" class="button">Mehr erfahren</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+	
+        <h3>Kontaktformular</h3>
+		
+	<form method="post" action="senden.php">
+        Name: <input type="text" name="von" /><br />
+        E-Mail Adresse: <input type="text" name="mail" /><br />
+        Betreff: <input type="text" name="betreff" /><br /><br />
+        Nachricht:<br />
+        <textarea style="width:500px;height:400px;" name="nachricht"></textarea><br />
+        <input type="submit" value="Senden" />
+    </form>
+    </div>
+
+    <div class="footer">
+        <h3>Platzhalter</h3>
+        <p>Platzhalter</p>
+    </div>
+</body>
+</html>
