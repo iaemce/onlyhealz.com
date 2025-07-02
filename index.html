@@ -1,169 +1,193 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beispielseite</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
-            background-color: #1e1e1e;
-            color: white;
-            padding: 40px;
-            max-width: 80%;
-            margin: 20px auto;
-            border-radius: 10px;
-        }
-        .content {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .box {
-            width: 30%;
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-        .box img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .section {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 40px auto;
-            color: #000000;
-        }
-        .button {
-            display: block;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .footer {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            color: white;
-            border-radius: 10px;
-        }
-        .contact-form {
-            background-color: #1e1e1e;
-            color: white;
-            padding: 30px;
-            max-width: 600px;
-            margin: 40px auto;
-            border-radius: 10px;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .contact-form textarea {
-            height: 120px;
-        }
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #218838;
-        }
-        .contact-form label {
-            display: block;
-            margin: 10px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAEMCE – Gaming Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: radial-gradient(circle, #1f1f1f 0%, #0f0f0f 100%);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+    .socials i {
+      font-size: 2rem;
+      margin: 0 0.5rem;
+      color: #00ffff;
+      transition: transform 0.3s;
+    }
+    .socials i:hover {
+      transform: scale(1.2);
+    }
+    .button {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.75rem 1.5rem;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #00dddd;
+    }
+    .shop-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .shop-item {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      width: 250px;
+    }
+    .shop-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .shop-item a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00ffff;
+      text-decoration: none;
+    }
+    .pay-form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+    .pay-form input {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      width: 80%;
+      border-radius: 6px;
+      border: none;
+    }
+    .counter {
+      text-align: center;
+      margin-top: 2rem;
+      color: #ccc;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>onlyhealz</h2>
-        <div class="content">
-            <div class="box">
-                <a href="./seiten/seite1.html"><img src="./Bilder/bild2.jpg" alt="Platzhalterbild"></a>
-                <h3>Iaemce</h3>
-                <p>Hallo ich bin Jens! Willkommen auf meiner Website. Hier möchte ich Ihnen die Möglichkeit geben, mehr über mich zu erfahren. :)</p>
-                <a href="./seiten/seite1.html" class="button">Mehr erfahren</a>
-            </div>
-            <div class="box">
-                <a href="./seiten/seite2.html"><img src="./Bilder/bild3.jpg" alt="Platzhalterbild"></a>
-                <h3>Ohne Unterstützung wäre ich aufgeschmissen!</h3>
-                <p>Ich bin eher so der Allrounder unter uns. Beim spielen eher der Heiler :D ! Aber ohne euch wäre ich heute nicht da, wo ich bin. Ich mag sehr viel! Ich bin gerne mit Gleichgesinnten zusammen und teile meine Leidenschaft und Kompetenz eigentlich gerne mit anderen. Seine Ziele zu verwirklichen ist nicht immer besonders einfach.</p>
-                <a href="./seiten/seite2.html" class="button">Mehr erfahren</a>
-            </div>
-            <div class="box">
-                <a href="./seiten/seite3.html"><img src="./Bilder/bild4.jpg" alt="Platzhalterbild"></a>
-                <h3>Unsere Motivation!</h3>
-                <p>Sterne fallen nicht vom Himmel, Sie reisen. Vielleicht bin ich auch einer von Ihnen und weis noch nicht wo meine reise hinführen soll oder geschweige denn aufhört bzw. anfängt?!</p>
-                <a href="./seiten/seite3.html" class="button">Mehr erfahren</a>
-            </div>
-        </div>
+  <header>
+    <h1>IAEMCE</h1>
+    <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
+  </header>
 
-        <div class="section">
-            <h1>Lerne mich kennen</h1>
-            <p>Herzlich willkommen, schön das Sie noch da sind! Also ich bin Jens zurzeit 31 Jahre jung und komme aus Niedersachsen/Emden. Ich Spiele das Computerspiel World of Warcraft seit ca. 17-18 Jahren mit zwischenzeitlichen Pausen. Ich Versuche mich momentan auf Streaming Plattformen  wie z.B Twitch oder Youtube. Streamen...hmmmm Unterhaltung können wir das nicht alle ein wenig gebrauchen ? Live übertragungen unserer Hobbys aus unserem Leben?!  Zu meinen Hobbys gehören unter anderem noch Tischtennis, Freunde-treffen, Familie und Angeln. Darum ist mir wichtig, dass das neue Projekt auch zu mir und meinen Werten passt. Denn nur so kann ich die besten Ergebnisse erzielen.</p>
-        </div>
-
-        <div class="content">
-            <div class="box">
-                <a href="./seiten/seite4.html"><img src="./Bilder/bild1.jpg" alt="Platzhalterbild"></a>
-                <h3>Gaming Charakter</h3>
-                <p> Blizzard Entertainment
-                    World of Warcraft
-                    IAMCE Diszipline Priest
-                    activisionblizzard.com</p>
-                <a href="./seiten/seite4.html" class="button">Mehr erfahren</a>
-            </div>
-            <div class="box">
-                <a href="./seiten/seite5.html"><img src="./Bilder/bild5.jpg" alt="Platzhalterbild"></a>
-                <h3>Jens Erdmann - Gamer</h3>
-                <p> Online - Streaming
-                    Social Medias everywhere " Iaemce "
-                    Youtube
-                    Instagram
-                    Twitch
-                    Snapchat
-                    X</p>
-                <a href="./seiten/seite5.html" class="button">Mehr erfahren</a>
-            </div>
-        </div>
+  <section>
+    <h2>Twitch Live</h2>
+    <div class="video-container">
+      <iframe src="https://player.twitch.tv/?channel=iaemce&parent=github.io" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <div class="contact-form">
-        <h3>Feel free to contact me? My E-Mail: jens.erdmann93@web.de</h3>
+  <section>
+    <h2>YouTube Highlights</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=Iaemce" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <div class="footer">
-        © 2025 Jens' Website
+  <section>
+    <h2>Support Me – Direkt via PayPal</h2>
+    <div class="pay-form">
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
+        <input type="hidden" name="business" value="jens.erdmann93@web.de">
+        <label for="amount">Betrag in EUR:</label><br>
+        <input type="number" name="amount" placeholder="5.00" min="1" step="0.01"><br>
+        <button class="button" type="submit">💸 Jetzt unterstützen</button>
+      </form>
     </div>
+  </section>
+
+  <section>
+    <h2>Empfohlene Produkte</h2>
+    <div class="shop-grid">
+      <div class="shop-item">
+        <img src="https://via.placeholder.com/250x150" alt="Produkt 1">
+        <p>Mein Lieblings-Headset</p>
+        <a href="#">Jetzt auf Amazon ansehen</a>
+      </div>
+      <div class="shop-item">
+        <img src="https://via.placeholder.com/250x150" alt="Produkt 2">
+        <p>Gaming Maus – Schnell & präzise</p>
+        <a href="#">Jetzt auf Amazon ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Socials</h2>
+    <div class="socials">
+      <a href="https://www.twitch.tv/iaemce" target="_blank"><i class="fab fa-twitch"></i></a>
+      <a href="https://www.youtube.com/@Iaemce" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/iaemce/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/Iaemce" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+    </div>
+  </section>
+
+  <section class="counter">
+    <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
+    <script>
+      fetch("https://api.countapi.xyz/hit/iaemce-website/visits")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("visitCount").innerText = data.value;
+        });
+    </script>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IAEMCE – Jens Erdmann | Impressum & Datenschutz auf Anfrage</p>
+  </footer>
 </body>
 </html>
