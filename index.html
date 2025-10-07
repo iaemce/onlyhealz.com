@@ -109,6 +109,19 @@
     .image-row img:hover {
       transform: scale(1.05);
     }
+
+    /* Video nebeneinander */
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .video-row .video-container {
+      flex: 1 1 400px;
+      max-width: 45%;
+    }
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -116,7 +129,6 @@
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 0 15px #00ffffaa;
-      margin-bottom: 2rem;
     }
     .video-container iframe {
       position: absolute;
@@ -125,6 +137,7 @@
       height: 100%;
       border: none;
     }
+
     .pay-form {
       background: #1a1a1a;
       padding: 2rem;
@@ -148,14 +161,12 @@
       width: 230px;
       box-shadow: 0 0 10px #00ffff88;
       transition: transform 0.3s;
-
-      .shop-item img {
-    width: 60%;           /* 🔹 vorher war das Bild viel größer */
-    height: auto;
-    margin-bottom: 0.8rem;
-    border-radius: 8px;
-  }
-
+    }
+    .shop-item img {
+      width: 60%;
+      height: auto;
+      margin-bottom: 0.8rem;
+      border-radius: 8px;
     }
     .shop-item:hover {
       transform: scale(1.05);
@@ -175,8 +186,8 @@
       border-top: 1px solid #222;
     }
     @media (max-width: 700px) {
-      .image-row img {
-        max-width: 80%;
+      .image-row img, .video-row .video-container {
+        max-width: 90%;
       }
     }
   </style>
@@ -188,7 +199,7 @@
   <h1>IAEMCE</h1>
   <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
 
-  <!-- 🔹 Socials direkt unter dem Header -->
+  <!-- Socials direkt unter dem Header -->
   <div class="socials-header">
     <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
     <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
@@ -200,27 +211,24 @@
 <section>
   <h2>Über mich & Gaming</h2>
   <div class="image-row">
-    <img src="images/ohne-unterstuetzung.jpg" alt="Ohne Unterstützung wäre ich aufgeschmissen" />
+    <img src="images/ohne-unterstuetzung.jpg" alt="Ohne Unterstützung" />
     <img src="images/gaming-char.jpg" alt="Gaming Charakter" />
     <img src="images/jens-erdmann.jpg" alt="Jens Erdmann" />
   </div>
   <p>
-    Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz.
-    Mein Lieblingscharakter im Spiel – stark und unbesiegbar. Ein leidenschaftlicher Gamer, der immer auf der Suche nach neuen Herausforderungen ist.
+    Hallo und herzlich willkommen auf meiner eigenen Website. Ich bin Jens, 31 Jahre alt und komme aus Deutschland. Die einen oder anderen kennen mich auch als Iaemce. Leidenschaftlicher Gamer oder Streamer des Computerspiels World of Warcraft.
   </p>
 </section>
 
 <section>
-  <h2>Twitch Live</h2>
-  <div class="video-container">
-    <iframe src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section>
-  <h2>YouTube Highlights</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen></iframe>
+  <h2>Live & Highlights</h2>
+  <div class="video-row">
+    <div class="video-container">
+      <iframe src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
 
@@ -240,14 +248,11 @@
   <h2>Empfohlene Produkte</h2>
   <div class="shop-grid">
     <div class="shop-item">
-      <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png" 
-        style="width:90%; height:auto; border-radius:8px; margin-bottom:0.8rem;"
-        alt="World of Warcraft" />
+      <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png" alt="World of Warcraft" />
       <a href="https://worldofwarcraft.blizzard.com/de-de/" target="_blank" rel="noopener">Jetzt ansehen</a>
     </div>
     <div class="shop-item">
-      <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SX679_.jpg" alt="Gaming Maus"
-         style="width:60%; height:auto; border-radius:8px; margin-bottom:0.8rem;"/>
+      <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SX679_.jpg" alt="Gaming Maus"/>
       <p>Gaming Maus – Schnell & präzise</p>
       <a href="https://www.amazon.de/dp/B087QZVQGZ" target="_blank" rel="noopener">Jetzt auf Amazon ansehen</a>
     </div>
@@ -257,24 +262,13 @@
 <section class="counter">
   <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
   <script>
-    const url = "https://api.npoint.io/90f9cd9b38802df49f92"; // deine URL hier
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const newCount = (data.visits || 0) + 1;
-        document.getElementById("visitCount").innerText = newCount;
-        fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ visits: newCount })
-        });
-      })
-      .catch(() => {
-        document.getElementById("visitCount").innerText = "–";
-      });
+    // Lokaler Besucherzähler (funktioniert auch auf statischen Seiten)
+    const storedVisits = localStorage.getItem("visitCount") || 0;
+    const newVisits = parseInt(storedVisits) + 1;
+    localStorage.setItem("visitCount", newVisits);
+    document.getElementById("visitCount").innerText = newVisits;
   </script>
 </section>
-
 
 <footer>
   <p>&copy; 2025 IAEMCE – Kontakt: <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">jens.erdmann93@web.de</a></p>
