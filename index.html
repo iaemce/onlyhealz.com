@@ -18,7 +18,7 @@
     header {
       background: radial-gradient(circle, #1f1f1f 0%, #0f0f0f 100%);
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 1.5rem 1rem;
       position: relative;
     }
     header h1 {
@@ -41,6 +41,20 @@
       margin-top: 0.3rem;
       font-size: 1.3rem;
       color: #aaa;
+    }
+    .socials-header {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .socials-header a {
+      margin: 0 0.8rem;
+      color: #00ffff;
+      font-size: 2rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .socials-header a:hover {
+      transform: scale(1.2);
+      color: #00cccc;
     }
     .lang-toggle {
       text-align: center;
@@ -138,19 +152,6 @@
     .shop-item:hover {
       transform: scale(1.05);
     }
-    .socials {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .socials a {
-      margin: 0 1rem;
-      color: #00ffff;
-      font-size: 2.5rem;
-      transition: transform 0.3s;
-    }
-    .socials a:hover {
-      transform: scale(1.3);
-    }
     .counter {
       text-align: center;
       font-size: 1.1rem;
@@ -178,6 +179,14 @@
   <img src="images/iaemce-profile.jpg" alt="Iaemce Profilbild" class="logo" />
   <h1>IAEMCE</h1>
   <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
+
+  <!-- 🔹 Socials direkt unter dem Header -->
+  <div class="socials-header">
+    <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
+    <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/Iaemce" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+  </div>
 </header>
 
 <section>
@@ -234,16 +243,6 @@
   </div>
 </section>
 
-<section>
-  <h2>Socials</h2>
-  <div class="socials">
-    <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
-    <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/Iaemce" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</section>
-
 <section class="counter">
   <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
   <script>
@@ -260,3 +259,4 @@
 
 </body>
 </html>
+
