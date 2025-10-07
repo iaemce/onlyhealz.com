@@ -257,12 +257,24 @@
 <section class="counter">
   <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
   <script>
-    fetch("https://api.countapi.dev/update/iaemce.github.io/visits/?amount=1")
+    const url = "https://api.npoint.io/90f9cd9b38802df49f92"; // deine URL hier
+    fetch(url)
       .then(res => res.json())
-      .then(data => { document.getElementById("visitCount").innerText = data.value; })
-      .catch(() => { document.getElementById("visitCount").innerText = "–"; });
+      .then(data => {
+        const newCount = (data.visits || 0) + 1;
+        document.getElementById("visitCount").innerText = newCount;
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ visits: newCount })
+        });
+      })
+      .catch(() => {
+        document.getElementById("visitCount").innerText = "–";
+      });
   </script>
 </section>
+
 
 <footer>
   <p>&copy; 2025 IAEMCE – Kontakt: <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">jens.erdmann93@web.de</a></p>
