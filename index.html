@@ -18,7 +18,7 @@
     header {
       background: radial-gradient(circle, #1f1f1f 0%, #0f0f0f 100%);
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 1rem 1rem;
       position: relative;
     }
     header h1 {
@@ -41,6 +41,20 @@
       margin-top: 0.3rem;
       font-size: 1.3rem;
       color: #aaa;
+    }
+    .socials-header {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .socials-header a {
+      margin: 0 0.8rem;
+      color: #00ffff;
+      font-size: 1.8rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .socials-header a:hover {
+      transform: scale(1.2);
+      color: #00cccc;
     }
     .lang-toggle {
       text-align: center;
@@ -77,23 +91,23 @@
     section p {
       font-size: 1.1rem;
       max-width: 700px;
-      margin: auto;
-      margin-top: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .image-row {
+    .bio-gallery {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .image-row img {
-      max-width: 30%;
+    .bio-gallery img {
+      width: 30%;
+      min-width: 200px;
       border-radius: 12px;
       box-shadow: 0 0 12px #00ffffaa;
-      transition: transform 0.3s;
-    }
-    .image-row img:hover {
-      transform: scale(1.05);
     }
     .video-container {
       position: relative;
@@ -111,46 +125,6 @@
       height: 100%;
       border: none;
     }
-    .pay-form {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 0 15px #00ffffaa;
-    }
-    .shop-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.8rem;
-    }
-    .shop-item {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      width: 230px;
-      box-shadow: 0 0 10px #00ffff88;
-      transition: transform 0.3s;
-    }
-    .shop-item:hover {
-      transform: scale(1.05);
-    }
-    .socials {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .socials a {
-      margin: 0 1rem;
-      color: #00ffff;
-      font-size: 2.5rem;
-      transition: transform 0.3s;
-    }
-    .socials a:hover {
-      transform: scale(1.3);
-    }
     .counter {
       text-align: center;
       font-size: 1.1rem;
@@ -165,92 +139,81 @@
       background: #111;
       border-top: 1px solid #222;
     }
-    @media (max-width: 700px) {
-      .image-row img {
-        max-width: 80%;
-      }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5rem; }
+      section h2 { font-size: 1.7rem; }
+      .bio-gallery img { width: 80%; }
     }
   </style>
+  <script>
+    function changeLang(lang) {
+      document.querySelectorAll("[data-de]").forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    }
+    window.onload = () => changeLang("de");
+  </script>
 </head>
 <body>
 
 <header>
   <img src="images/iaemce-profile.jpg" alt="Iaemce Profilbild" class="logo" />
   <h1>IAEMCE</h1>
-  <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
-</header>
-
-<section>
-  <h2>Über mich & Gaming</h2>
-  <div class="image-row">
-    <img src="images/ohne-unterstuetzung.jpg" alt="Ohne Unterstützung wäre ich aufgeschmissen" />
-    <img src="images/gaming-char.jpg" alt="Gaming Charakter" />
-    <img src="images/jens-erdmann.jpg" alt="Jens Erdmann" />
-  </div>
-  <p>
-    Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz.
-    Mein Lieblingscharakter im Spiel – stark und unbesiegbar. Ein leidenschaftlicher Gamer, der immer auf der Suche nach neuen Herausforderungen ist.
+  <p class="subtitle" data-de="Gamer. Creator. World of Warcraft Enthusiast." data-en="Gamer. Creator. World of Warcraft Enthusiast.">
+    Gamer. Creator. World of Warcraft Enthusiast.
   </p>
-</section>
 
-<section>
-  <h2>Twitch Live</h2>
-  <div class="video-container">
-    <iframe src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section>
-  <h2>YouTube Highlights</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section>
-  <h2>Support Me – Direkt via PayPal</h2>
-  <div class="pay-form">
-    <form action="https://www.paypal.com/donate" method="post" target="_blank" novalidate>
-      <input type="hidden" name="business" value="jens.erdmann93@web.de" />
-      <label for="amount">Betrag in EUR:</label>
-      <input type="number" id="amount" name="amount" placeholder="5.00" min="1" step="0.01" required />
-      <button type="submit">💸 Jetzt unterstützen</button>
-    </form>
-  </div>
-</section>
-
-<section>
-  <h2>Empfohlene Produkte</h2>
-  <div class="shop-grid">
-    <div class="shop-item">
-      <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png" alt="World of Warcraft" />
-      <a href="https://worldofwarcraft.blizzard.com/de-de/" target="_blank" rel="noopener">Jetzt ansehen</a>
-    </div>
-    <div class="shop-item">
-      <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SX679_.jpg" alt="Gaming Maus" />
-      <p>Gaming Maus – Schnell & präzise</p>
-      <a href="https://www.amazon.de/dp/B087QZVQGZ" target="_blank" rel="noopener">Jetzt auf Amazon ansehen</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Socials</h2>
-  <div class="socials">
+  <div class="socials-header">
     <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
     <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
     <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
     <a href="https://x.com/Iaemce" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
   </div>
+</header>
+
+<div class="lang-toggle">
+  <button onclick="changeLang('de')">🇩🇪 Deutsch</button>
+  <button onclick="changeLang('en')">🇬🇧 English</button>
+</div>
+
+<section>
+  <h2 data-de="Über mich & Gaming" data-en="About Me & Gaming">Über mich & Gaming</h2>
+  <div class="bio-gallery">
+    <img src="images/ohne-unterstuetzung.jpg" alt="Über mich" />
+    <img src="images/gaming-char.jpg" alt="Gaming Charakter" />
+    <img src="images/jens-erdmann.jpg" alt="Jens Erdmann" />
+  </div>
+  <p data-de="Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz. Mein Lieblingscharakter im Spiel ist stark und unbesiegbar – immer auf der Suche nach neuen Herausforderungen."
+     data-en="Without support, I'd be lost. I love gaming – especially WoW – and stream with passion. My favorite character in the game is strong and unbeatable – always seeking new challenges.">
+    Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz. Mein Lieblingscharakter im Spiel ist stark und unbesiegbar – immer auf der Suche nach neuen Herausforderungen.
+  </p>
+</section>
+
+<section>
+  <h2 data-de="Twitch Live" data-en="Twitch Live">Twitch Live</h2>
+  <div class="video-container">
+    <iframe src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io" allowfullscreen scrolling="no" frameborder="0"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2 data-de="YouTube Highlights" data-en="YouTube Highlights">YouTube Highlights</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen frameborder="0"></iframe>
+  </div>
 </section>
 
 <section class="counter">
-  <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
+  <p>👁️ <span data-de="Besucherzähler" data-en="Visitor Count">Besucherzähler</span>: <span id="visitCount">Lädt...</span></p>
   <script>
     fetch("https://api.countapi.dev/update/iaemce.github.io/visits/?amount=1")
       .then(res => res.json())
-      .then(data => { document.getElementById("visitCount").innerText = data.value; })
-      .catch(() => { document.getElementById("visitCount").innerText = "–"; });
+      .then(data => {
+        document.getElementById("visitCount").innerText = data.value;
+      })
+      .catch(() => {
+        document.getElementById("visitCount").innerText = "–";
+      });
   </script>
 </section>
 
