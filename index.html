@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Grunddesign */
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
@@ -43,8 +42,6 @@
       font-size: 1.3rem;
       color: #aaa;
     }
-
-    /* Sprachwechsel */
     .lang-toggle {
       text-align: center;
       margin: 1.5rem 0;
@@ -65,7 +62,6 @@
       background: #00ffff;
       color: #000;
     }
-
     section {
       max-width: 900px;
       margin: auto;
@@ -83,21 +79,15 @@
       max-width: 700px;
       margin-bottom: 1rem;
     }
-
-    /* Bilder */
-    .bio-image,
-    .gaming-char-image,
-    .coaching-image {
+    .bio-image, .gaming-char-image, .coaching-image {
       max-width: 50%;
       border-radius: 12px;
       box-shadow: 0 0 12px #00ffffaa;
       margin-bottom: 1rem;
     }
-
-    /* Video Container */
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 12px;
@@ -111,8 +101,6 @@
       height: 100%;
       border: none;
     }
-
-    /* Coaching Button */
     .coaching-button {
       display: inline-block;
       padding: 0.7rem 1.8rem;
@@ -125,11 +113,7 @@
       box-shadow: 0 0 10px #00ffff;
       transition: background 0.3s;
     }
-    .coaching-button:hover {
-      background: #00cccc;
-    }
-
-    /* PayPal Support */
+    .coaching-button:hover { background: #00cccc; }
     .pay-form {
       background: #1a1a1a;
       padding: 2rem;
@@ -139,138 +123,59 @@
       text-align: center;
       box-shadow: 0 0 15px #00ffffaa;
     }
-    .pay-form label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
+    .pay-form label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
     .pay-form input[type=number] {
-      padding: 0.6rem;
-      width: 80%;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      text-align: center;
+      padding: 0.6rem; width: 80%; border-radius: 6px; border: none;
+      margin-bottom: 1rem; font-size: 1rem; text-align: center;
     }
     .pay-form button {
-      cursor: pointer;
-      background: #00ffff;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
-      box-shadow: 0 0 10px #00ffff;
-      transition: background 0.3s;
+      cursor: pointer; background: #00ffff; color: #000; border: none;
+      border-radius: 8px; font-weight: bold; padding: 0.75rem 1.5rem;
+      font-size: 1.1rem; box-shadow: 0 0 10px #00ffff; transition: background 0.3s;
     }
-    .pay-form button:hover {
-      background: #00cccc;
-    }
-
-    /* Shop Grid */
-    .shop-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.8rem;
-    }
+    .pay-form button:hover { background: #00cccc; }
+    .shop-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8rem; }
     .shop-item {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      width: 230px;
-      box-shadow: 0 0 10px #00ffff88;
-      transition: transform 0.3s;
+      background: #1a1a1a; border-radius: 10px; padding: 1rem; text-align: center;
+      width: 230px; box-shadow: 0 0 10px #00ffff88; transition: transform 0.3s;
     }
-    .shop-item:hover {
-      transform: scale(1.05);
-    }
-    .shop-item img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 0.8rem;
-    }
-    .shop-item a {
-      color: #00ffff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .shop-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* Social Icons */
-    .socials {
-      text-align: center;
-      margin: 2rem 0;
-    }
+    .shop-item:hover { transform: scale(1.05); }
+    .shop-item img { max-width: 100%; border-radius: 8px; margin-bottom: 0.8rem; }
+    .shop-item a { color: #00ffff; font-weight: bold; text-decoration: none; }
+    .shop-item a:hover { text-decoration: underline; }
+    .socials { text-align: center; margin: 2rem 0; }
     .socials a {
-      margin: 0 1rem;
-      color: #00ffff;
-      font-size: 2.5rem;
-      transition: transform 0.3s;
+      margin: 0 1rem; color: #00ffff; font-size: 2.5rem; transition: transform 0.3s;
     }
-    .socials a:hover {
-      transform: scale(1.3);
-    }
-
-    /* Besucherzähler */
-    .counter {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #aaa;
-      margin-bottom: 3rem;
-    }
-
-    /* Footer */
+    .socials a:hover { transform: scale(1.3); }
+    .counter { text-align: center; font-size: 1.1rem; color: #aaa; margin-bottom: 3rem; }
     footer {
-      text-align: center;
-      padding: 1.8rem 1rem;
-      font-size: 0.85rem;
-      color: #555;
-      background: #111;
-      border-top: 1px solid #222;
+      text-align: center; padding: 1.8rem 1rem; font-size: 0.85rem;
+      color: #555; background: #111; border-top: 1px solid #222;
     }
-
-    /* Responsive */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      section h2 {
-        font-size: 1.7rem;
-      }
-      .shop-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .shop-item {
-        width: 90%;
-      }
+      header h1 { font-size: 2.5rem; }
+      section h2 { font-size: 1.7rem; }
+      .shop-grid { flex-direction: column; align-items: center; }
+      .shop-item { width: 90%; }
     }
   </style>
-
   <script>
     function changeLang(lang) {
       document.querySelectorAll("[data-de]").forEach(el => {
         el.innerText = el.getAttribute(`data-${lang}`);
       });
     }
-    window.onload = () => {
-      changeLang("de"); // Standardsprache Deutsch
-    };
+    window.onload = () => { changeLang("de"); };
   </script>
 </head>
 <body>
-
 <header>
   <img src="images/iaemce-profile.jpg" alt="Iaemce Profilbild" class="logo" />
   <h1>IAEMCE</h1>
-  <p class="subtitle" data-de="Gamer. Creator. World of Warcraft Enthusiast." data-en="Gamer. Creator. World of Warcraft Enthusiast.">
-    Gamer. Creator. World of Warcraft Enthusiast.
+  <p class="subtitle" data-de="Gamer. Creator. World of Warcraft Enthusiast."
+     data-en="Gamer. Creator. World of Warcraft Enthusiast.">
+     Gamer. Creator. World of Warcraft Enthusiast.
   </p>
 </header>
 
@@ -282,109 +187,55 @@
 <section>
   <h2 data-de="Über mich" data-en="About Me">Über mich</h2>
   <img src="images/ohne-unterstuetzung.jpg" alt="Ohne Unterstützung wäre ich aufgeschmissen" class="bio-image" />
-  <p data-de="Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz." 
+  <p data-de="Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz."
      data-en="Without support, I'd be lost. I love gaming – especially WoW – and stream with passion.">
-    Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz.
+     Ohne Unterstützung wäre ich aufgeschmissen. Ich liebe Gaming, besonders WoW, und bin leidenschaftlicher Streamer mit Herz.
   </p>
 </section>
 
 <section>
   <h2 data-de="Gaming Charakter" data-en="Gaming Character">Gaming Charakter</h2>
   <img src="images/gaming-char.jpg" alt="Gaming Charakter" class="gaming-char-image" />
-  <p data-de="Mein Lieblingscharakter im Spiel – stark und unbesiegbar." data-en="My favorite character in the game – strong and unbeatable.">
-    Mein Lieblingscharakter im Spiel – stark und unbesiegbar.
-  </p>
-</section>
-
-<section>
-  <h2 data-de="Jens Erdmann - Gamer" data-en="Jens Erdmann - Gamer">Jens Erdmann - Gamer</h2>
-  <img src="images/jens-erdmann.jpg" alt="Jens Erdmann - Gamer" class="bio-image" />
-  <p data-de="Ein leidenschaftlicher Gamer, der immer auf der Suche nach neuen Herausforderungen ist." data-en="A passionate gamer always seeking new challenges.">
-    Ein leidenschaftlicher Gamer, der immer auf der Suche nach neuen Herausforderungen ist.
+  <p data-de="Mein Lieblingscharakter im Spiel – stark und unbesiegbar."
+     data-en="My favorite character in the game – strong and unbeatable.">
+     Mein Lieblingscharakter im Spiel – stark und unbesiegbar.
   </p>
 </section>
 
 <section>
   <h2 data-de="Twitch Live" data-en="Twitch Live">Twitch Live</h2>
   <div class="video-container">
-    <iframe
-      src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io"
-      allowfullscreen
-      scrolling="no"
-      frameborder="0">
-    </iframe>
+    <iframe src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io"
+            allowfullscreen scrolling="no" frameborder="0"></iframe>
   </div>
 </section>
 
 <section>
   <h2 data-de="YouTube Highlights" data-en="YouTube Highlights">YouTube Highlights</h2>
   <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/7P3THLrNW10"
-      allowfullscreen
-      frameborder="0">
-    </iframe>
-  </div>
-</section>
-
-
-
-<section>
-  <h2 data-de="Support Me – Direkt via PayPal" data-en="Support Me – Direct via PayPal">Support Me – Direkt via PayPal</h2>
-  <div class="pay-form">
-    <form action="https://www.paypal.com/donate" method="post" target="_blank" novalidate>
-      <input type="hidden" name="business" value="jens.erdmann93@web.de" />
-      <label for="amount" data-de="Betrag in EUR:" data-en="Amount in EUR:">Betrag in EUR:</label>
-      <input type="number" id="amount" name="amount" placeholder="5.00" min="1" step="0.01" required />
-      <button type="submit">💸 <span data-de="Jetzt unterstützen" data-en="Support now">Jetzt unterstützen</span></button>
-    </form>
-  </div>
-</section>
-
-<section>
-  <h2 data-de="Empfohlene Produkte" data-en="Recommended Products">Empfohlene Produkte</h2>
-  <div class="shop-grid">
-    <div class="shop-item">
-       <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png" alt="Headset" />
-      <a href="https://worldofwarcraft.blizzard.com/de-de/" target="_blank" rel="noopener" data-de="World of Warcraft" data-en="View on Amazon">Jetz ansehen</a>
-    </div>
-    <div class="shop-item">
-      <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SX679_.jpg" alt="Gaming Maus" />
-      <p data-de="Gaming Maus – Schnell & präzise" data-en="Gaming mouse – fast & precise">Gaming Maus – Schnell & präzise</p>
-      <a href="https://www.amazon.de/dp/B087QZVQGZ" target="_blank" rel="noopener" data-de="Jetzt auf Amazon ansehen" data-en="View on Amazon">Jetzt auf Amazon ansehen</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 data-de="Socials" data-en="Socials">Socials</h2>
-  <div class="socials">
-    <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
-    <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/Iaemce" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+    <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen frameborder="0"></iframe>
   </div>
 </section>
 
 <section class="counter">
-  <p>👁️ <span data-de="Besucherzähler" data-en="Visitor Count">Besucherzähler</span>: <span id="visitCount">Lädt...</span></p>
+  <p>👁️ <span data-de="Besucherzähler" data-en="Visitor Count">Besucherzähler</span>: 
+     <span id="visitCount">Lädt...</span></p>
   <script>
-    fetch("https://api.countapi.dev/visit/iaemce.github.io/visits")
+    fetch("https://api.countapi.dev/update/iaemce.github.io/visits/?amount=1")
       .then(res => res.json())
       .then(data => {
         document.getElementById("visitCount").innerText = data.value;
       })
-      .catch(() => {
+      .catch(err => {
+        console.error("Zählerfehler:", err);
         document.getElementById("visitCount").innerText = "–";
       });
   </script>
 </section>
 
 <footer>
-  <p>
-    &copy; 2025 IAEMCE – Kontakt: <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">jens.erdmann93@web.de</a>
-  </p>
+  <p>&copy; 2025 IAEMCE – Kontakt: 
+  <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">jens.erdmann93@web.de</a></p>
 </footer>
-
 </body>
 </html>
