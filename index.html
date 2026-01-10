@@ -6,6 +6,7 @@
   <title>IAEMCE – Gaming Creator</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     body {
       margin: 0;
@@ -15,18 +16,21 @@
       scroll-behavior: smooth;
       line-height: 1.5;
     }
+
     header {
       background: radial-gradient(circle, #1f1f1f 0%, #0f0f0f 100%);
       text-align: center;
-      padding: 3rem 1rem 1.5rem 1rem;
+      padding: 3rem 1rem 1.5rem;
       position: relative;
     }
+
     header h1 {
       font-size: 3.5rem;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
       margin: 0;
     }
+
     header img.logo {
       position: absolute;
       top: 15px;
@@ -34,200 +38,156 @@
       width: 60px;
       height: 60px;
       border-radius: 10px;
-      object-fit: cover;
       border: 2px solid #00ffff;
+      object-fit: cover;
     }
+
     .subtitle {
-      margin-top: 0.3rem;
       font-size: 1.3rem;
       color: #aaa;
+      margin-top: 0.3rem;
     }
+
     .socials-header {
-      text-align: center;
       margin-top: 1rem;
     }
+
     .socials-header a {
       margin: 0 0.8rem;
       color: #00ffff;
       font-size: 2rem;
-      transition: transform 0.3s, color 0.3s;
+      transition: transform 0.3s;
     }
+
     .socials-header a:hover {
       transform: scale(1.2);
-      color: #00cccc;
     }
-    .lang-toggle {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-    .lang-toggle button {
-      background: transparent;
-      border: 2px solid #00ffff;
-      color: #00ffff;
-      padding: 0.4rem 1rem;
-      margin: 0 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: background 0.3s, color 0.3s;
-    }
-    .lang-toggle button:hover {
-      background: #00ffff;
-      color: #000;
-    }
+
     section {
       max-width: 900px;
       margin: auto;
       padding: 2rem 1rem;
       border-bottom: 1px solid #222;
     }
-    section h2 {
+
+    h2 {
       color: #00ffff;
-      margin-bottom: 1rem;
-      font-size: 2rem;
       text-shadow: 0 0 8px #00ffff;
     }
-    section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: auto;
-      margin-top: 1rem;
-    }
+
     .image-row {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
+
     .image-row img {
       max-width: 30%;
       border-radius: 12px;
       box-shadow: 0 0 12px #00ffffaa;
-      transition: transform 0.3s;
-    }
-    .image-row img:hover {
-      transform: scale(1.05);
     }
 
-    /* Video nebeneinander */
+    .zoomed-out {
+      max-width: 90%;
+    }
+
     .video-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-    .video-row .video-container {
-      flex: 1 1 400px;
-      max-width: 45%;
-    }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
+      width: 45%;
       height: 0;
-      overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 0 15px #00ffffaa;
+      overflow: hidden;
     }
+
     .video-container iframe {
       position: absolute;
-      top: 0; left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    .pay-form {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 0 15px #00ffffaa;
-    }
     .shop-grid {
       display: flex;
-      flex-wrap: wrap;
+      gap: 2rem;
       justify-content: center;
-      gap: 1.8rem;
+      flex-wrap: wrap;
     }
+
     .shop-item {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
       width: 230px;
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
       box-shadow: 0 0 10px #00ffff88;
-      transition: transform 0.3s;
     }
+
     .shop-item img {
       width: 60%;
-      height: auto;
       margin-bottom: 0.8rem;
-      border-radius: 8px;
     }
-    .shop-item:hover {
-      transform: scale(1.05);
-    }
+
     .counter {
       text-align: center;
-      font-size: 1.1rem;
       color: #aaa;
+      font-size: 1.1rem;
       margin-bottom: 3rem;
     }
-    
-    .zoomed-out {
-  max-width: 90%; /* kleiner als Standard */
-  transition: transform 0.3s;
-}
-
-.zoomed-out:hover {
-  transform: scale(1.05);
-}
 
     footer {
+      background: #111;
       text-align: center;
-      padding: 1.8rem 1rem;
+      padding: 1.5rem;
       font-size: 0.85rem;
       color: #555;
-      background: #111;
-      border-top: 1px solid #222;
     }
+
     @media (max-width: 700px) {
-      .image-row img, .video-row .video-container {
+      .video-container {
+        width: 100%;
+      }
+
+      .image-row img {
         max-width: 90%;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <img src="images/iaemce-profile.jpg" alt="Iaemce Profilbild" class="logo" />
+  <img src="images/iaemce-profile.jpg" alt="Profilbild" class="logo" />
   <h1>IAEMCE</h1>
   <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
 
-  <!-- Socials direkt unter dem Header -->
   <div class="socials-header">
-    <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener"><i class="fab fa-twitch"></i></a>
-    <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/Iaemce" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.twitch.tv/iaemce" target="_blank"><i class="fab fa-twitch"></i></a>
+    <a href="https://www.youtube.com/@Iaemce" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/iaemce/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/Iaemce" target="_blank"><i class="fab fa-x-twitter"></i></a>
   </div>
 </header>
 
 <section>
   <h2>Über mich & Gaming</h2>
   <div class="image-row">
-<img src="images/ohne-unterstuetzung2.jpg" alt="Ohne Unterstützung" class="zoomed-out" />
-<img src="images/gaming-char.jpg" alt="Gaming Charakter" class="zoomed-out" />
-<img src="images/jens-erdmann1.jpg" alt="Jens Erdmann" />
-
+    <img src="images/ohne-unterstuetzung2.jpg" class="zoomed-out" />
+    <img src="images/gaming-char.jpg" />
+    <img src="images/jens-erdmann1.jpg" />
   </div>
   <p>
-    Hallo und herzlich willkommen auf meiner eigenen Website. Ich bin Jens, 31 Jahre alt und komme aus Deutschland. Die einen oder anderen kennen mich auch als Iaemce. Leidenschaftlicher Gamer oder Streamer des Computerspiels World of Warcraft.
+    Hallo und herzlich willkommen! Ich bin Jens, leidenschaftlicher WoW-Gamer & Streamer.
   </p>
 </section>
 
@@ -243,48 +203,24 @@
   </div>
 </section>
 
-<section>
-  <h2>Support Me – Direkt via PayPal</h2>
-  <div class="pay-form">
-    <form action="https://www.paypal.com/donate" method="post" target="_blank" novalidate>
-      <input type="hidden" name="business" value="jens.erdmann93@web.de" />
-      <label for="amount">Betrag in EUR:</label>
-      <input type="number" id="amount" name="amount" placeholder="5.00" min="1" step="0.01" required />
-      <button type="submit">💸 Jetzt unterstützen</button>
-    </form>
-  </div>
-</section>
-
-<section>
-  <h2>Empfohlene Produkte</h2>
-  <div class="shop-grid">
-    <div class="shop-item">
-      <img src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png" alt="World of Warcraft" />
-      <a href="https://worldofwarcraft.blizzard.com/de-de/" target="_blank" rel="noopener">Jetzt ansehen</a>
-    </div>
-    <div class="shop-item">
-      <img src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_92111988?x=1800&y=1800&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=1800&ey=1800&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=1800&cdy=1800.jpg" alt="Gaming Maus"/>
-      <p>AOC Monitor - Curved</p>
-      <a href="https://www.mediamarkt.de/de/product/_aoc-c32g2ze-2667088.html?storeId=&utm_source=google&utm_medium=cpc&utm_campaign=RT_shopping_na_nsp_na_PLA+-+bluePortal+4&gclsrc=aw.ds&gad_source=1&gad_campaignid=1435857758&gbraid=0AAAAADh5KahymsR5dxBJMS_M5wn_7zPra&gclid=Cj0KCQjw9JLHBhC-ARIsAK4Phcp7CJXWuWfHRnumKDjAkx8UgzyAUqLOY4qS5nQgM5h9sJkCuYFS2l0aAsPtEALw_wcB" target="_blank" rel="noopener">Jetzt ansehen</a>
-    </div>
-  </div>
-</section>
-
 <section class="counter">
   <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
-  <script>
-    // Lokaler Besucherzähler (funktioniert auch auf statischen Seiten)
-    const storedVisits = localStorage.getItem("visitCount") || 0;
-    const newVisits = parseInt(storedVisits) + 1;
-    localStorage.setItem("visitCount", newVisits);
-    document.getElementById("visitCount").innerText = newVisits;
-  </script>
 </section>
 
+<script>
+  fetch("https://api.countapi.xyz/hit/iaemce-website/visits")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visitCount").textContent = data.value;
+    })
+    .catch(() => {
+      document.getElementById("visitCount").textContent = "–";
+    });
+</script>
+
 <footer>
-  <p>&copy; 2025 IAEMCE – Kontakt: <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">jens.erdmann93@web.de</a></p>
+  &copy; 2025 IAEMCE – <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">Kontakt</a>
 </footer>
 
 </body>
 </html>
-
