@@ -203,11 +203,11 @@
   </div>
 </section>
 
-<section class="counter">
-  <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
-</section>
+<!section class="counter">
+  <!p>👁️ Besucherzähler: <!span id="visitCount">Lädt...<!/span><!/p>
+<!/section>
 
-<script>
+<!script>
   fetch("https://api.countapi.xyz/hit/iaemce-website/visits")
     .then(res => res.json())
     .then(data => {
@@ -216,7 +216,7 @@
     .catch(() => {
       document.getElementById("visitCount").textContent = "–";
     });
-</script>
+<!/script>
 
 <footer>
   &copy; 2025 IAEMCE – <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">Kontakt</a>
