@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CZCZEE – Gaming Creator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <title>IAEMCE – Gaming Creator</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
   <style>
     body {
@@ -20,7 +28,7 @@
     header {
       background: radial-gradient(circle, #1f1f1f 0%, #0f0f0f 100%);
       text-align: center;
-      padding: 3rem 1rem 1.5rem;
+      padding: 3rem 1rem 1.5rem 1rem;
       position: relative;
     }
 
@@ -38,17 +46,18 @@
       width: 60px;
       height: 60px;
       border-radius: 10px;
-      border: 2px solid #00ffff;
       object-fit: cover;
+      border: 2px solid #00ffff;
     }
 
     .subtitle {
+      margin-top: 0.3rem;
       font-size: 1.3rem;
       color: #aaa;
-      margin-top: 0.3rem;
     }
 
     .socials-header {
+      text-align: center;
       margin-top: 1rem;
     }
 
@@ -56,11 +65,35 @@
       margin: 0 0.8rem;
       color: #00ffff;
       font-size: 2rem;
-      transition: transform 0.3s;
+      transition: transform 0.3s, color 0.3s;
     }
 
     .socials-header a:hover {
       transform: scale(1.2);
+      color: #00cccc;
+    }
+
+    .lang-toggle {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 0.4rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .lang-toggle button:hover {
+      background: #00ffff;
+      color: #000;
     }
 
     section {
@@ -70,95 +103,114 @@
       border-bottom: 1px solid #222;
     }
 
-    h2 {
+    section h2 {
       color: #00ffff;
+      margin-bottom: 1rem;
+      font-size: 2rem;
       text-shadow: 0 0 8px #00ffff;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      margin-top: 1rem;
     }
 
     .image-row {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
     }
 
     .image-row img {
       max-width: 30%;
       border-radius: 12px;
       box-shadow: 0 0 12px #00ffffaa;
+      transition: transform 0.3s;
     }
 
-    .zoomed-out {
-      max-width: 90%;
-    }
-
-    .video-row {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .image-row img:hover {
+      transform: scale(1.05);
     }
 
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
-      width: 45%;
       height: 0;
+      overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 0 15px #00ffffaa;
-      overflow: hidden;
+      margin-bottom: 2rem;
     }
 
     .video-container iframe {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
 
+    .pay-form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+      box-shadow: 0 0 15px #00ffffaa;
+    }
+
     .shop-grid {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
     }
 
     .shop-item {
-      width: 230px;
       background: #1a1a1a;
-      padding: 1rem;
       border-radius: 10px;
+      padding: 1rem;
       text-align: center;
+      width: 230px;
       box-shadow: 0 0 10px #00ffff88;
+      transition: transform 0.3s;
+
+      .shop-item img {
+        width: 60%;
+        height: auto;
+        margin-bottom: 0.8rem;
+        border-radius: 8px;
+      }
     }
 
-    .shop-item img {
-      width: 60%;
-      margin-bottom: 0.8rem;
+    .shop-item:hover {
+      transform: scale(1.05);
     }
 
     .counter {
       text-align: center;
-      color: #aaa;
       font-size: 1.1rem;
+      color: #aaa;
       margin-bottom: 3rem;
     }
 
     footer {
-      background: #111;
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.8rem 1rem;
       font-size: 0.85rem;
       color: #555;
+      background: #111;
+      border-top: 1px solid #222;
     }
 
     @media (max-width: 700px) {
-      .video-container {
-        width: 100%;
-      }
-
       .image-row img {
-        max-width: 90%;
+        max-width: 80%;
       }
     }
   </style>
@@ -166,61 +218,170 @@
 
 <body>
 
-<header>
-  <img src="images/iaemce-profile.jpg" alt="Profilbild" class="logo" />
-  <h1>CZCZEE</h1>
-  <p class="subtitle">Gamer. Creator. World of Warcraft Enthusiast.</p>
+  <header>
+    <img
+      src="images/iaemce-profile.jpg"
+      alt="Iaemce Profilbild"
+      class="logo"
+    />
 
-  <div class="socials-header">
-    <a href="https://www.twitch.tv/czczee" target="_blank"><i class="fab fa-twitch"></i></a>
-    <a href="https://www.youtube.com/@czczee" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/czczee/" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/czczee" target="_blank"><i class="fab fa-x-twitter"></i></a>
-  </div>
-</header>
+    <h1>IAEMCE</h1>
+    <p class="subtitle">
+      Gamer. Creator. World of Warcraft Enthusiast.
+    </p>
 
-<section>
-  <h2>Über mich & Gaming</h2>
-  <div class="image-row">
-    <img src="images/ohne-unterstuetzung2.jpg" class="zoomed-out" />
-    <img src="images/gaming-char.jpg" />
-    <img src="images/jens-erdmann1.jpg" />
-  </div>
-  <p>
-    Hallo und herzlich willkommen! Ich bin Jens, leidenschaftlicher WoW-Gamer & Streamer.
-  </p>
-</section>
-
-<section>
-  <h2>Live & Highlights</h2>
-  <div class="video-row">
-    <div class="video-container">
-      <iframe src="https://player.twitch.tv/?channel=czczee&parent=iaemce.github.io" allowfullscreen></iframe>
+    <div class="socials-header">
+      <a href="https://www.twitch.tv/iaemce" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i>
+      </a>
+      <a href="https://www.youtube.com/@Iaemce" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/iaemce/" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://x.com/Iaemce" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i>
+      </a>
     </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7P3THLrNW10" allowfullscreen></iframe>
+  </header>
+
+  <section>
+    <h2>Über mich & Gaming</h2>
+
+    <div class="image-row">
+      <img src="images/ohne-unterstuetzung.jpg" alt="Ohne Unterstützung wäre ich aufgeschmissen" />
+      <img src="images/gaming-char.jpg" alt="Gaming Charakter" />
+      <img src="images/jens-erdmann.jpg" alt="Jens Erdmann" />
     </div>
-  </div>
-</section>
 
-<section class="counter">
-  <p>👁️ Besucherzähler: <span id="visitCount">Lädt...</span></p>
-</section>
+    <p>
+      Hallo und herzlich willkommen auf meiner eigenen Website. Ich bin Jens,
+      31 Jahre alt und komme aus Deutschland. Die einen oder anderen kennen mich
+      auch als Iaemce. Leidenschaftlicher Gamer oder Streamer des Computerspiels
+      World of Warcraft, welches Ihr immer wenn ich Live bin direkt mit verfolgen könnt.
+    </p>
+  </section>
 
-<script>
-  fetch("https://api.countapi.xyz/hit/iaemce-website/visits")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("visitCount").textContent = data.value;
-    })
-    .catch(() => {
-      document.getElementById("visitCount").textContent = "–";
-    });
-</script>
+  <section>
+    <h2>Twitch Live</h2>
+    <div class="video-container">
+      <iframe
+        src="https://player.twitch.tv/?channel=iaemce&parent=iaemce.github.io"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 IAEMCE – <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">Kontakt</a>
-</footer>
+  <section>
+    <h2>YouTube Highlights</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/7P3THLrNW10"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Support Me – Direkt via PayPal</h2>
+    <div class="pay-form">
+      <form
+        action="https://www.paypal.com/donate"
+        method="post"
+        target="_blank"
+        novalidate
+      >
+        <input type="hidden" name="business" value="jens.erdmann93@web.de" />
+
+        <label for="amount">Betrag in EUR:</label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          placeholder="5.00"
+          min="1"
+          step="0.01"
+          required
+        />
+
+        <button type="submit">💸 Jetzt unterstützen</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <h2>Empfohlene Produkte</h2>
+
+    <div class="shop-grid">
+      <div class="shop-item">
+        <img
+          src="https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/blte82ef8135378a09b/5d4883cabf384b03afd01553/Logo-wow.png"
+          style="width:90%; height:auto; border-radius:8px; margin-bottom:0.8rem;"
+          alt="World of Warcraft"
+        />
+        <a
+          href="https://worldofwarcraft.blizzard.com/de-de/"
+          target="_blank"
+          rel="noopener"
+        >
+          Jetzt ansehen
+        </a>
+      </div>
+
+      <div class="shop-item">
+        <img
+          src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SX679_.jpg"
+          alt="Gaming Maus"
+          style="width:60%; height:auto; border-radius:8px; margin-bottom:0.8rem;"
+        />
+        <p>Gaming Maus – Schnell & präzise</p>
+        <a
+          href="https://www.amazon.de/dp/B087QZVQGZ"
+          target="_blank"
+          rel="noopener"
+        >
+          Jetzt auf Amazon ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="counter">
+    <p>
+      👁️ Besucherzähler:
+      <span id="visitCount">Lädt...</span>
+    </p>
+
+    <script>
+      const url = "https://api.npoint.io/90f9cd9b38802df49f92";
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          const newCount = (data.visits || 0) + 1;
+          document.getElementById("visitCount").innerText = newCount;
+
+          fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ visits: newCount })
+          });
+        })
+        .catch(() => {
+          document.getElementById("visitCount").innerText = "–";
+        });
+    </script>
+  </section>
+
+  <footer>
+    <p>
+      &copy; 2025 IAEMCE – Kontakt:
+      <a href="mailto:jens.erdmann93@web.de" style="color:#00ffff;">
+        jens.erdmann93@web.de
+      </a>
+    </p>
+  </footer>
 
 </body>
 </html>
